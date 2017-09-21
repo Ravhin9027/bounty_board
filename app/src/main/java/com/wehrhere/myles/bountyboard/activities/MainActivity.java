@@ -76,20 +76,14 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Activity activity) {
             final ListView listview = (ListView) findViewById(R.id.listview);
 
-            String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                    "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                    "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                    "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                    "Android", "iPhone", "WindowsMobile" };
-
-            final Collection<Bounty> bounties = bountiesTable.getBounties().values();
+            final ArrayList<Bounty> bounties = new ArrayList<>(bountiesTable.getBounties().values());
             final ArrayList<String> list = new ArrayList<>();
-/*            for (Bounty bounty : bounties) {
-                list.add(bounty.getBounty());
+            for (Bounty bounty : bounties) {
+                if (bounty.getBounty() != null) {
+                    list.add(bounty.getBounty());
+                }
             }
-*/            for (String value : values) {
-                list.add(value);
-            }
+
             final StableArrayAdapter adapter = new StableArrayAdapter(activity,
                     android.R.layout.simple_list_item_1, list);
             listview.setAdapter(adapter);
