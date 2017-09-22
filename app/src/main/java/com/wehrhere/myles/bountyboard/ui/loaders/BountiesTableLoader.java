@@ -18,7 +18,8 @@ import java.util.ArrayList;
  * Created by mwehr on 9/21/17.
  */
 
-public class TableLoader extends AsyncTask<Activity, Void, Activity> {
+//TODO: Abstract the loader?
+public class BountiesTableLoader extends AsyncTask<Activity, Void, Activity> {
 
     private Bounties bountiesTable;
 

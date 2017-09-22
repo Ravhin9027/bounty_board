@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.wehrhere.myles.bountyboard.R;
-import com.wehrhere.myles.bountyboard.ui.loaders.TableLoader;
+import com.wehrhere.myles.bountyboard.ui.loaders.BountiesTableLoader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new TableLoader().execute(this);
+        new BountiesTableLoader().execute(this);
     }
 
 }
