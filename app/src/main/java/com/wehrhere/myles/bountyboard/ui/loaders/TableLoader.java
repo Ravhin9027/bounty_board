@@ -9,6 +9,7 @@ import android.widget.ListView;
 import com.wehrhere.myles.bountyboard.R;
 import com.wehrhere.myles.bountyboard.infrastructure.records.Bounty;
 import com.wehrhere.myles.bountyboard.infrastructure.tables.Bounties;
+import com.wehrhere.myles.bountyboard.ui.adapters.BountyAdapter;
 import com.wehrhere.myles.bountyboard.ui.adapters.StableArrayAdapter;
 
 import java.util.ArrayList;
@@ -31,15 +32,9 @@ public class TableLoader extends AsyncTask<Activity, Void, Activity> {
     protected void onPostExecute(Activity activity) {
         final ListView listview = activity.findViewById(R.id.listview);
 
-        final ArrayList<Bounty> bounties = new ArrayList<>(bountiesTable.getBounties().values());
-        final ArrayList<String> list = new ArrayList<>();
-        for (Bounty bounty : bounties) {
-            if (bounty.getBounty() != null) {
-                list.add(bounty.getBounty());
-            }
-        }
+        final ArrayList<Bounty> list = new ArrayList<>(bountiesTable.getBounties().values());
 
-        final StableArrayAdapter adapter = new StableArrayAdapter(activity,
+        final BountyAdapter adapter = new BountyAdapter(activity,
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
 
@@ -48,7 +43,8 @@ public class TableLoader extends AsyncTask<Activity, Void, Activity> {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
-                final String item = (String) parent.getItemAtPosition(position);
+                //TODO: Replace this logic with a bounty form launcher
+                final String item = (String) parent.getItemAtPosition(position).toString();
                 view.animate().setDuration(2000).alpha(0)
                         .withEndAction(new Runnable() {
                             @Override

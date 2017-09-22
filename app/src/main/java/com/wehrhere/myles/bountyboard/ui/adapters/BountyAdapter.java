@@ -5,7 +5,6 @@ import android.widget.ArrayAdapter;
 
 import com.wehrhere.myles.bountyboard.infrastructure.records.Bounty;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,23 +12,21 @@ import java.util.List;
  * Created by mwehr on 9/22/17.
  */
 
-public class BountyAdapter extends ArrayAdapter<String> {
+public class BountyAdapter extends ArrayAdapter<Bounty> {
 
     HashMap<String, Integer> mIdMap = new HashMap<>();
 
-    public StableArrayAdapter(Context context, int textViewResourceId,
-                              List<Bounty> bounties) {
-        ArrayList<String> objects = new ArrayList<>();
-        for (Bounty bounty : bounties) {
-            objects.add(bounty.getBounty());
-            mIdMap.put(bounty.getBounty(), new Integer(bounty.getBountyId()));
-        }
+    public BountyAdapter(Context context, int textViewResourceId,
+                              List<Bounty> objects) {
         super(context, textViewResourceId, objects);
+        for (int i = 0; i < objects.size(); ++i) {
+            mIdMap.put(objects.get(i).toString(), i);
+        }
     }
 
     @Override
     public long getItemId(int position) {
-        String item = getItem(position);
+        String item = getItem(position).toString();
         return mIdMap.get(item);
     }
 
@@ -37,4 +34,5 @@ public class BountyAdapter extends ArrayAdapter<String> {
     public boolean hasStableIds() {
         return true;
     }
+
 }

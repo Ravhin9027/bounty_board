@@ -13,6 +13,7 @@ import org.json.JSONObject;
 public abstract class Record extends JSONObject {
 
     private static final String TAG = Record.class.getSimpleName();
+    private static final String NAME_FIELD = "";
 
     /** Fields */
     private static final String ID = "id";
@@ -32,19 +33,6 @@ public abstract class Record extends JSONObject {
         setFields(new JSONObject());
     }
 
-    @Override
-    public String toString() {
-        try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put(ID, getId());
-            jsonObject.put(FIELDS, getFields());
-            jsonObject.put(CREATED_TIME, getCreatedTime());
-            return jsonObject.toString();
-        } catch (JSONException e) {
-            Log.e(TAG, e.getClass().getSimpleName() + ": " + e.getMessage());
-            return null;
-        }
-    }
 
     /** Public Accessors */
 
@@ -105,6 +93,26 @@ public abstract class Record extends JSONObject {
         return json;
     }
 
+    public String serialize() {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put(ID, getId());
+            jsonObject.put(FIELDS, getFields());
+            jsonObject.put(CREATED_TIME, getCreatedTime());
+            return jsonObject.toString();
+        } catch (JSONException e) {
+            Log.e(TAG, e.getClass().getSimpleName() + ": " + e.getMessage());
+            return null;
+        }
+    }
+
     public abstract String getPrimaryKey();
+
+    protected abstract String getNameField();
+
+    @Override
+    public String toString() {
+        return getValue(getNameField());
+    }
 
 }
