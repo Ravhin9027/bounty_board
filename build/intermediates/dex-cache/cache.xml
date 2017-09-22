@@ -272,6 +272,24 @@
         <dex dex="/Users/mwehr/AndroidStudioProjects/BountyBoard/app/build/intermediates/pre-dexed/debug/classes_4eb73cc7a9ebd982539f503fc75bf7e5d89c2aef.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/Users/mwehr/AndroidStudioProjects/bounty_board/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/mwehr/AndroidStudioProjects/bounty_board/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_abd8e04360b3c8bd407a0de400e060678da627db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mwehr/AndroidStudioProjects/bounty_board/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="06dafffd1047058ce8093ae27827c110a3409dfd">
+        <dex dex="/Users/mwehr/AndroidStudioProjects/bounty_board/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ae7517a1f37be5ebb06e7e53aa22b6c4691bd136/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/Users/mwehr/.android/build-cache/a49d813bc32ea2fca12c1d1633ac13716d21d55a/output/jars/classes.jar"
         jumboMode="false"

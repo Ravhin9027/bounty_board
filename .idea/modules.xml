@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BountyBoard.iml" filepath="$PROJECT_DIR$/BountyBoard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bounty_board.iml" filepath="$PROJECT_DIR$/bounty_board.iml" />
     </modules>
   </component>
 </project>
