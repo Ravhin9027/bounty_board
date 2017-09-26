@@ -28,29 +28,11 @@ public class Bounty extends Record {
     private static final String DATE_ISSUED = "Date Issued";
     private static final String DATE_COMPLETED = "Date Completed";
 
-    private static final String PRIMARY_KEY = BOUNTY_ID;
-    private static final String NAME_FIELD = BOUNTY;
-
     public Bounty(JSONObject record) throws JSONException {
-        super(record);
-    }
-
-    public Bounty() {
-        super();
+        super(record, BOUNTY_ID, BOUNTY);
     }
 
     /** Public accessors */
-
-    @Override
-    public String getPrimaryKey() {
-        return PRIMARY_KEY;
-    }
-
-    @Override
-    protected String getNameField() {
-        return NAME_FIELD;
-    }
-
     public String getBountyId() {
         return getValue(BOUNTY_ID);
     }
