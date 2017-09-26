@@ -32,6 +32,10 @@ public class Bounty extends Record {
         super(record, BOUNTY_ID, BOUNTY);
     }
 
+    public Bounty() {
+        super();
+    }
+
     /** Public accessors */
     public String getBountyId() {
         return getValue(BOUNTY_ID);

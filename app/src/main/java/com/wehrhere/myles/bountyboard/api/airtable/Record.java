@@ -93,19 +93,6 @@ public abstract class Record extends JSONObject {
         return json;
     }
 
-    public String serialize() {
-        try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put(ID, getId());
-            jsonObject.put(FIELDS, getFields());
-            jsonObject.put(CREATED_TIME, getCreatedTime());
-            return jsonObject.toString();
-        } catch (JSONException e) {
-            Log.e(TAG, e.getClass().getSimpleName() + ": " + e.getMessage());
-            return null;
-        }
-    }
-
     public String getPrimaryKey() {
         return primaryKeyField;
     }
