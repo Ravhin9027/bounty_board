@@ -13,7 +13,10 @@ import org.json.JSONObject;
 public abstract class Record extends JSONObject {
 
     private static final String TAG = Record.class.getSimpleName();
-    private static final String NAME_FIELD = "";
+
+    /** Config Values */
+    private String nameField;
+    private String primaryKey;
 
     /** Fields */
     private static final String ID = "id";
@@ -23,10 +26,12 @@ public abstract class Record extends JSONObject {
     private static final String CREATED_TIME = "createdTime";
     private String createdTime;
 
-    public Record(JSONObject record) throws JSONException {
+    public Record(JSONObject record, String primaryKey, String nameField) throws JSONException {
         this.setId(record.getString(ID));
         this.setFields(record.getJSONObject(FIELDS));
         this.setCreatedTime(record.getString(CREATED_TIME));
+        this.primaryKey = primaryKey;
+        this.nameField = nameField;
     }
 
     public Record() {
@@ -106,9 +111,13 @@ public abstract class Record extends JSONObject {
         }
     }
 
-    public abstract String getPrimaryKey();
+    public String getPrimaryKey() {
+        return primaryKey;
+    }
 
-    protected abstract String getNameField();
+    public String getNameField() {
+        return nameField;
+    }
 
     @Override
     public String toString() {

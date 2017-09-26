@@ -83,4 +83,14 @@ public class TestAirtableInterface {
         assertEquals(records.length() < bounties.getBounties().size(), true);
     }
 
+    @Test
+    public void testConfigValues() throws Exception {
+        BountiesTesting bounties = new BountiesTesting();
+        String recordId = (String) bounties.getBounties().keySet().toArray()[0];
+        Bounty bounty = bounties.getBounties().get(recordId);
+
+        assertEquals(bounty.getPrimaryKey(), "Bounty Id");
+        assertEquals(bounty.getNameField(), "Bounty");
+    }
+
 }

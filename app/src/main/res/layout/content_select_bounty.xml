@@ -8,4 +8,10 @@
     tools:context="com.wehrhere.myles.bountyboard.ui.activities.SelectBountyActivity"
     tools:showIn="@layout/activity_select_bounty">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="319dp"
+        android:layout_height="35dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="38dp" />
 </android.support.constraint.ConstraintLayout>
